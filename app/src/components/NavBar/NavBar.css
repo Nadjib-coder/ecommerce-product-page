@@ -1,0 +1,81 @@
+.avatar {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 60px;
+}
+
+.left-side, .right-side {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.sneakers {
+    margin-right: 30px;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    margin-left: 15px;
+    cursor: pointer;
+    opacity: 0.6;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    color: #000;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: hsl(26, 100%, 55%);
+}
+
+hr {
+    position: relative; 
+    width: 100%;
+    opacity: 0.5;
+    margin: 0;
+    top: 16px;
+}
+
+.profile, .cart {
+    border-radius: 100%;
+    cursor: pointer;
+    border: transparent;
+    background-color: transparent;
+}
+
+.profile {
+    width: 35%;
+}
+
+.cart {
+    padding: 2px;
+    margin-right: 15px;
+}
+
+.avatar {
+    width: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+}
+
+.avatar:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+}
