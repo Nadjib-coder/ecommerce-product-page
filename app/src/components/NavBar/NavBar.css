@@ -17,7 +17,7 @@
     flex: 4;
 }
 
-ul.links {
+.links-section .links {
     display: flex;
     list-style: none;
     gap: 5%;
@@ -25,19 +25,20 @@ ul.links {
     align-items: start;
 }
 
-ul.links li a {
+.links-section .links li a {
     text-decoration: none;
     color: #000;
     opacity: 0.6;
     position: relative;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
 }
 
-ul.links li a:hover {
-    cursor: pointer;
+.links-section .links li a:hover {
     opacity: 1;
 }
 
-ul.links li a:hover::after {
+.links-section .links li a:hover::after {
     content: '';
     position: absolute;
     background-color: hsl(26, 100%, 55%);
@@ -101,13 +102,34 @@ ul.links li a:hover::after {
         left: 0;
         top: 0;
         z-index: 101;
+        padding: 25px;
     }
 
     .links-section .links {
         flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .links-section .links li a:hover::after {
+        content: none; 
     }
 
     .links-section .close {
         display: block;
+        margin-bottom: 35px;
+        cursor: pointer;
     }
+
+    .links-section .links li a:hover {
+        opacity: 0.6;
+    }
+
+    .links-section .links li a:active,
+    .links-section .links li a:focus {
+        opacity: 1;
+        transition: opacity 0.4 ease;
+    }
+
 }
