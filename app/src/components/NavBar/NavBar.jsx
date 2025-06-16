@@ -1,18 +1,38 @@
 import './NavBar.css';
+import { useState } from 'react';
 
 export default function NavBar() {
+  const [isMenuOpen, setisMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setisMenuOpen(!isMenuOpen);
+  };
+
+  const menuOpenBg = isMenuOpen ? 'open-bg' : '';
+  const menuOpen = isMenuOpen ? 'open-mn' : '';
+
   return (
     <header className="nav-container" id="home">
       <nav className="navbar">
         <div className="logo-menu-section">
-          <img className="menu" src="/assets/icon-menu.svg" alt="Menu" />
+          <button className="menu" onClick={toggleMenu}>
+            <img className="menu-icon" src="/assets/icon-menu.svg" alt="Menu" />
+          </button>
           <a href="#home">
-            <img src="/assets/logo.svg" alt="Logo" />
+            <img className="logo" src="/assets/logo.svg" alt="Logo" />
           </a>
         </div>
-        <div className="mobile-menu-active"></div>
-        <div className="links-section">
-          <img className="close" src="/assets/icon-close.svg" alt="close" />
+
+        <div className={`mobile-menu-active ${menuOpenBg}`}></div>
+
+        <div className={`links-section ${menuOpen}`}>
+          <button className="close-btn" onClick={toggleMenu}>
+            <img
+              className="close-icon"
+              src="/assets/icon-close.svg"
+              alt="close"
+            />
+          </button>
           <ul className="links">
             <li>
               <a href="#">Collections</a>
@@ -31,6 +51,7 @@ export default function NavBar() {
             </li>
           </ul>
         </div>
+
         <div className="cart-avatar-section">
           <img className="cart" src="/assets/icon-cart.svg" alt="Cart" />
           <img className="avatar" src="/assets/image-avatar.png" alt="Avatar" />

@@ -58,6 +58,20 @@
 
 .cart-avatar-section .avatar {
     width: 40px;
+    cursor: pointer;
+    transition: scale 0.4s ease;
+}
+
+.cart-avatar-section .avatar:hover {
+    transform: scale(1.1);
+}
+
+.cart-avatar-section .cart {
+    cursor: pointer;
+    transition: scale 0.4s ease;
+}
+.cart-avatar-section .cart:hover {
+    transform: scale(1.1);
 }
 
 .nav-container hr {
@@ -69,15 +83,30 @@
     display: none;
 }
 
-.links-section .close {
+.links-section .close-btn {
     display: none;
 }
 
 /* small screen size */
 @media (max-width: 768px) {
-    /* .logo-menu-section .menu {
-        display: flex;
-    } */
+
+    .logo-menu-section {
+        flex: 2;
+    }
+    .cart-avatar-section {
+        flex: 1;
+    }
+
+    .logo-menu-section .menu {
+        display: inline;
+        margin-right: 10px;
+        border: none;
+        background: none;
+    }
+
+    .logo-menu-section .logo {
+        width: 120px
+    }
 
     .mobile-menu-active {
         background-color: rgba(0, 0, 0, 0.6);
@@ -87,7 +116,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 100%;
+        width: 0;
     }
 
     .nav-container hr {
@@ -98,11 +127,13 @@
         background-color: #ffffff;
         position: absolute;
         height: 100%;
-        width: 70%;
+        width: 0;
         left: 0;
         top: 0;
         z-index: 101;
-        padding: 25px;
+        padding: 0px;
+        overflow: hidden;
+        transition: width 0.4s ease, padding 0.4s ease;
     }
 
     .links-section .links {
@@ -116,10 +147,20 @@
         content: none; 
     }
 
-    .links-section .close {
+    .links-section .close-btn {
         display: block;
         margin-bottom: 35px;
         cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        transform: rotate(0deg);
+        background: none;
+        border: none;
+    }
+
+    .links-section .close-btn:focus,
+    .links-section .close-btn:active {
+        transform: rotate(-90deg); 
+  
     }
 
     .links-section .links li a:hover {
@@ -132,4 +173,20 @@
         transition: opacity 0.4 ease;
     }
 
+    .cart-avatar-section .avatar {
+        width: 28px;
+    }
+    .cart-avatar-section .cart {
+        width: 20px;
+    }
+
+    .open-bg {
+        width: 100%;
+    }
+
+    .open-mn {
+        width: 60%;
+        padding: 35px 30px;
+    }
 }
+
