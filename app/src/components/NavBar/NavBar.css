@@ -143,9 +143,7 @@
         gap: 20px;
     }
 
-    .links-section .links li a:hover::after {
-        content: none; 
-    }
+
 
     .links-section .close-btn {
         display: block;
@@ -163,14 +161,18 @@
   
     }
 
-    .links-section .links li a:hover {
-        opacity: 0.6;
+    .links-section .links li a:hover::after {
+        content: none; 
     }
 
-    .links-section .links li a:active,
-    .links-section .links li a:focus {
+    .links-section .links li a {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .links-section .links li a:hover,
+    .links-section .links li a {
         opacity: 1;
-        transition: opacity 0.4 ease;
     }
 
     .cart-avatar-section .avatar {
