@@ -1,7 +1,7 @@
 import './NavBar.css';
 import { useState } from 'react';
 
-export default function NavBar() {
+const NavBar = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -60,4 +60,6 @@ export default function NavBar() {
       <hr />
     </header>
   );
-}
+};
+
+export default NavBar;

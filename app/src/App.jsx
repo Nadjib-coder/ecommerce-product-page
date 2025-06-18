@@ -1,10 +1,14 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
+import ProductPage from './components/ProductPage/ProductPage';
 
-export default function App() {
+function App() {
   return (
     <div className="container">
       <Navbar />
+      <ProductPage />
     </div>
   );
 }
+
+export default App;
