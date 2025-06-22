@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { images, thumbnail } from './images';
+import { images, thumbnail, productInfo } from './products-data';
 
 const ImageGallery = () => {
-  const [activeImage, setActiveImage] = useState('/assets/image-product-1.jpg');
+  const [activeImage, setActiveImage] = useState(productInfo.image);
   const [activeThumbnail, setActiveThumbnail] = useState(
     '/assets/image-product-1-thumbnail.jpg',
   );
   return (
-    <div className="flex flex-col items-center">
-      <button className="w-80 h-80 cursor-pointer">
+    <div className="image-gallery flex flex-col items-center">
+      <button className="cursor-pointer">
         <img
           src={activeImage}
           alt="Active Product"
@@ -28,7 +28,7 @@ const ImageGallery = () => {
             <img
               src={src}
               alt={`Thumbnail ${index + 1}`}
-              className={`w-17 h-17 object-cover rounded-lg cursor-pointer hover:opacity-70 ${
+              className={`object-cover rounded-lg cursor-pointer hover:opacity-70 ${
                 src === activeThumbnail
                   ? 'ring-2 ring-orange-500 opacity-55'
                   : ''

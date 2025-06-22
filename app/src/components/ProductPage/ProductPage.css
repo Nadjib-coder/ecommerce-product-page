@@ -1,0 +1,18 @@
+.product-details {
+    width: 60%;
+}
+
+.image-gallery {
+    width: 40%;
+}
+
+.product-quantity {
+    background-color: #F7F8FD;
+}
+
+.add-to-cart {
+    background-color: hsl(26, 100%, 55%);
+}
+.minus, .plus {
+    color: hsl(26, 100%, 55%);
+}
