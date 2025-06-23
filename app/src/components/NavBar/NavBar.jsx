@@ -88,7 +88,7 @@ const NavBar = () => {
           </ul>
         </div>
 
-        <div className="cart-avatar-section gap-7">
+        <div className="cart-avatar-section">
           <div className="cart cursor-pointer justify-center items-center">
             {productCountity > 0 && cartItems.length != 0 ? (
               <span className="cart-count flex justify-center items-center bg-orange-500 text-white">
@@ -123,7 +123,11 @@ const NavBar = () => {
               </div>
             )}
           </div>
-          <img className="avatar" src="/assets/image-avatar.png" alt="Avatar" />
+          <img
+            className="avatar ml-5"
+            src="/assets/image-avatar.png"
+            alt="Avatar"
+          />
         </div>
       </nav>
       <hr className="nav" />

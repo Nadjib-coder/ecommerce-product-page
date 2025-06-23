@@ -12,10 +12,10 @@ const ImageGallery = () => {
         <img
           src={activeImage}
           alt="Active Product"
-          className="object-cover rounded-xl"
+          className="active-image object-cover rounded-xl"
         />
       </button>
-      <div className="flex gap-4 mt-4">
+      <div className="thumbnail flex gap-4 mt-4">
         {thumbnail.map((src, index) => (
           <button
             key={index}
