@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../CartContext';
-import { productInfo } from './products-data';
+import { productInfo, icons } from './assets-and-data';
 
 const ProductDetails = () => {
   const { addToCart, productCountity, setProductCountity } =
@@ -14,6 +14,14 @@ const ProductDetails = () => {
   function handleAddToCart() {
     addToCart(productInfo, productCountity);
   }
+
+  // calculate the current price
+  productInfo.currentPrice = Number(
+    productInfo.originalPrice * (productInfo.discount / 100),
+  ).toFixed(2);
+
+  // display the originalPrice with two decimal places
+  productInfo.originalPrice = Number(productInfo.originalPrice).toFixed(2);
 
   return (
     <section className="product-details flex flex-col aligne-start p-5">
@@ -62,7 +70,7 @@ const ProductDetails = () => {
           onClick={handleAddToCart}
         >
           <img
-            src="./assets/icon-cart.svg"
+            src={icons.cartIcon}
             alt="shopping bag"
             className="inline shopping-bag-icon mr-3"
           />

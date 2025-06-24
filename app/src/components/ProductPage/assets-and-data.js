@@ -1,3 +1,12 @@
+const icons = {
+  logo: '/assets/logo.svg',
+  menuIcon: '/assets/icon-menu.svg',
+  closeIcon: '/assets/icon-close.svg',
+  cartIcon: '/assets/icon-cart.svg',
+  avatar: '/assets/image-avatar.png',
+  delete: '/assets/icon-delete.svg',
+};
+
 const thumbnail = [
   '/assets/image-product-1-thumbnail.jpg',
   '/assets/image-product-2-thumbnail.jpg',
@@ -8,6 +17,8 @@ const thumbnail = [
 const images = [
   '/assets/image-product-1.jpg',
   '/assets/image-product-2.jpg',
+  '/assets/image-product-3.jpg',
+  '/assets/image-product-4.jpg',
   '/assets/image-product-3.jpg',
   '/assets/image-product-4.jpg',
 ];
@@ -24,12 +35,4 @@ const productInfo = {
   productCountity: 0,
 };
 
-// calculate the current price
-productInfo.currentPrice = Number(
-  productInfo.originalPrice * (productInfo.discount / 100),
-).toFixed(2);
-
-// display the originalPrice with two decimal places
-productInfo.originalPrice = Number(productInfo.originalPrice).toFixed(2);
-
-export { images, thumbnail, productInfo };
+export { icons, images, thumbnail, productInfo };

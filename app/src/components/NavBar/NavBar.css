@@ -1,4 +1,11 @@
-hr {
+/* Styling for the navbar container */
+
+/* CSS Variable */
+:root {
+    --primary-color: hsl(26, 100%, 55%);
+}
+
+.nav-container hr {
     opacity: 0.1;
 }
 
@@ -7,13 +14,6 @@ hr {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        padding: 0 5px;
-        margin: 0;
-    }
 }
 
 .logo-menu-section {
@@ -54,7 +54,7 @@ hr {
 .links-section .links li a:hover::after {
     content: '';
     position: absolute;
-    background-color: hsl(26, 100%, 55%);
+    background-color: var(--primary-color);
     width: 100%;
     height: 4px;
     bottom: -41px;
@@ -78,17 +78,6 @@ hr {
     z-index: 2;
 }
 
-@media (max-width: 600px) {
-    .cart-dropdown {
-        position: fixed;
-        top: 180px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        max-width: 400px;
-    }
-}
-
 .cart-avatar-section .cart-icon {
     transition: scale 0.4s ease;
     position: relative;
@@ -108,8 +97,6 @@ hr {
     font-size: 10px;
     z-index: 1;
 }
-
-
 
 .cart-dropdown .selected-product {
     display: flex;
@@ -145,12 +132,17 @@ hr {
     display: none;
 }
 
-/* small screen size */
-@media (max-width: 768px) {
+.selected-product-item .product-image {
+    width: 40px;
+    height: 40px;
+}
 
+/* Tablet screen size designe */
+@media (max-width: 768px) {
     .logo-menu-section {
         flex: 2;
     }
+
     .cart-avatar-section {
         flex: 1;
     }
@@ -201,8 +193,6 @@ hr {
         gap: 20px;
     }
 
-
-
     .links-section .close-btn {
         display: block;
         margin-bottom: 35px;
@@ -236,6 +226,7 @@ hr {
     .cart-avatar-section .avatar {
         width: 28px;
     }
+
     .cart-avatar-section .cart {
         width: 20px;
     }
@@ -250,9 +241,19 @@ hr {
     }
 }
 
+/* Mobile Size desgine */
+@media (max-width: 600px) {
+    .cart-dropdown {
+        position: fixed;
+        top: 180px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 400px;
+    }
 
-/** Cart styling **/
-.selected-product-item .product-image {
-    width: 40px;
-    height: 40px;
+    .navbar {
+        padding: 0 5px;
+        margin: 0;
+    }
 }

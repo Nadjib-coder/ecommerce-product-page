@@ -1,6 +1,7 @@
 import './NavBar.css';
 import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
+import { icons } from '../ProductPage/assets-and-data';
 
 const NavBar = () => {
   const { cartItems, productCountity, deleteItem } = useContext(CartContext);
@@ -37,10 +38,7 @@ const NavBar = () => {
             </span>
           </div>
           <button onClick={() => deleteItem(index)}>
-            <img
-              src="./assets/icon-delete.svg"
-              className="size-4 cursor-pointer"
-            />
+            <img src={icons.delete} className="size-4 cursor-pointer" />
           </button>
         </div>
       );
@@ -52,10 +50,10 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="logo-menu-section">
           <button className="menu" onClick={toggleMenu}>
-            <img className="menu-icon" src="/assets/icon-menu.svg" alt="Menu" />
+            <img className="menu-icon" src={icons.menuIcon} alt="Menu" />
           </button>
           <a href="#home">
-            <img className="logo" src="/assets/logo.svg" alt="Logo" />
+            <img className="logo" src={icons.logo} alt="Logo" />
           </a>
         </div>
 
@@ -63,11 +61,7 @@ const NavBar = () => {
 
         <div className={`links-section ${menuOpen}`}>
           <button className="close-btn" onClick={toggleMenu}>
-            <img
-              className="close-icon"
-              src="/assets/icon-close.svg"
-              alt="close"
-            />
+            <img className="close-icon" src={icons.closeIcon} alt="close" />
           </button>
           <ul className="links">
             <li>
@@ -89,7 +83,10 @@ const NavBar = () => {
         </div>
 
         <div className="cart-avatar-section">
-          <div className="cart cursor-pointer justify-center items-center">
+          <button
+            className="cart cursor-pointer justify-center items-center"
+            onClick={toggleCart}
+          >
             {productCountity > 0 && cartItems.length != 0 ? (
               <span className="cart-count flex justify-center items-center bg-orange-500 text-white">
                 {productCountity}
@@ -97,13 +94,8 @@ const NavBar = () => {
             ) : (
               ''
             )}
-            <img
-              className="cart-icon"
-              src="/assets/icon-cart.svg"
-              alt="Cart"
-              onClick={toggleCart}
-            />
-          </div>
+            <img className="cart-icon" src={icons.cartIcon} alt="Cart" />
+          </button>
 
           <div className={`cart-dropdown rounded hidden ${cartOpen}`}>
             <h3 className="p-3 text-xs font-extrabold tracking-wider">Cart</h3>
@@ -123,11 +115,7 @@ const NavBar = () => {
               </div>
             )}
           </div>
-          <img
-            className="avatar ml-5"
-            src="/assets/image-avatar.png"
-            alt="Avatar"
-          />
+          <img className="avatar ml-5" src={icons.avatar} alt="Avatar" />
         </div>
       </nav>
       <hr className="nav" />

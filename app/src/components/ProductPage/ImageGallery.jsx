@@ -1,14 +1,23 @@
 import { useState } from 'react';
-import { images, thumbnail, productInfo } from './products-data';
+import { images, thumbnail, productInfo } from './assets-and-data';
+import { CartContext } from '../CartContext';
+import { useContext } from 'react';
+import MobileImageGallery from './MobileImageGallery';
 
 const ImageGallery = () => {
   const [activeImage, setActiveImage] = useState(productInfo.image);
   const [activeThumbnail, setActiveThumbnail] = useState(
     '/assets/image-product-1-thumbnail.jpg',
   );
+
+  const { getImageGallery } = useContext(CartContext);
   return (
     <div className="image-gallery flex flex-col items-center">
-      <button className="cursor-pointer">
+      <MobileImageGallery />
+      <button
+        className="large-screen-image cursor-pointer"
+        onClick={getImageGallery}
+      >
         <img
           src={activeImage}
           alt="Active Product"
