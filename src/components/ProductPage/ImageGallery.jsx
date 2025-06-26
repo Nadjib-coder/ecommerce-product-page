@@ -1,3 +1,4 @@
+import './ProductPage.css';
 import { useState } from 'react';
 import { images, thumbnail, productInfo } from './assets-and-data';
 import { CartContext } from '../CartContext';

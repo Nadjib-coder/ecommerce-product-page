@@ -23,6 +23,11 @@
         display: none;
 }
 
+.btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 /*-------- Larg screen size Desgine ----------*/
 
 
@@ -122,8 +127,6 @@
 
     /* Buttons styling */
     .btn {
-        background-color: var(--primary-color);
-        color: #fff;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
@@ -131,14 +134,14 @@
     }
     .close-image-gallery-ls-only {
         position: absolute;
-  top: 10%; 
-  right: 10%;
-  width: 40px;
-  cursor: pointer;
-  background-color: #fdfdfd;
-  padding: 10px;
-  border-radius: 30%;
-  z-index: 10000;
+        top: 10%; 
+        right: 10%;
+        width: 40px;
+        cursor: pointer;
+        background-color: #fdfdfd;
+        padding: 10px;
+        border-radius: 30%;
+        z-index: 10000;
     }
 
     .close-image-gallery-ls-only.visible {
@@ -259,8 +262,6 @@
     }
 
     .btn {
-        background-color: var(--primary-color);
-        color: #fff;
         padding: 6px 12px;
         border-radius: 5px;
         cursor: pointer;

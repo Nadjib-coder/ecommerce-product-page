@@ -39,7 +39,7 @@ const NavBar = () => {
             </span>
           </div>
           <button onClick={() => deleteItem(index)}>
-            <img src={icons.delete} className="size-4 cursor-pointer" />
+            <img src={icons.delete} className="bg-none size-4 cursor-pointer" />
           </button>
         </div>
       );

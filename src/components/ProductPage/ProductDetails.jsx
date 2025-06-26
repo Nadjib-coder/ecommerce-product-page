@@ -1,3 +1,4 @@
+import './ProductPage.css';
 import { useContext } from 'react';
 import { CartContext } from '../CartContext';
 import { productInfo, icons } from './assets-and-data';
@@ -73,7 +74,7 @@ const ProductDetails = () => {
           </button>
         </div>
         <button
-          className="add-to-cart py-1 px-3 w-70 font-bold content-center rounded text-s hover:opacity-80 cursor-pointer"
+          className="btn add-to-cart py-1 px-3 w-70 font-bold content-center rounded text-s hover:opacity-80 cursor-pointer"
           onClick={handleAddToCart}
         >
           <img

@@ -3,7 +3,8 @@
 }
 
 :root {
-    --primary-color: #6E8883;
+    --primary-color: #000;
+    --secondary-color: #fff;
 }
 
 .container {
