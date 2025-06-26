@@ -6,7 +6,14 @@ const ProductDetails = () => {
   const { addToCart, productCountity, setProductCountity } =
     useContext(CartContext);
 
-  const handleIncrement = () => setProductCountity((prev) => prev + 1);
+  const handleIncrement = () => {
+    if (productCountity >= 10)
+      alert(
+        'Warning You have reached the unit limit for this item. If you would like to add more, we recommend placing an additional order.',
+      );
+    // i will chnage this alert later by rendreing a warning coponents and designe it
+    if (productCountity < 10) setProductCountity((prev) => prev + 1);
+  };
   const handleDecrement = () => {
     if (productCountity > 0) setProductCountity((prev) => prev - 1);
   };

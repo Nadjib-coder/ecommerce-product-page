@@ -2,6 +2,7 @@ import './NavBar.css';
 import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
 import { icons } from '../ProductPage/assets-and-data';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const { cartItems, productCountity, deleteItem } = useContext(CartContext);
@@ -50,11 +51,15 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="logo-menu-section">
           <button className="menu" onClick={toggleMenu}>
-            <img className="menu-icon" src={icons.menuIcon} alt="Menu" />
+            <img
+              className="menu-icon cursor-pointer"
+              src={icons.menuIcon}
+              alt="Menu"
+            />
           </button>
-          <a href="#home">
+          <NavLink to="/">
             <img className="logo" src={icons.logo} alt="Logo" />
-          </a>
+          </NavLink>
         </div>
 
         <div className={`mobile-menu-active ${menuOpenBg}`}></div>
@@ -65,19 +70,16 @@ const NavBar = () => {
           </button>
           <ul className="links">
             <li>
-              <a href="#">Collections</a>
+              <NavLink to="/">Collections</NavLink>
             </li>
             <li>
-              <a href="#">Men</a>
+              <NavLink to="/productpage">ProductPage</NavLink>
             </li>
             <li>
-              <a href="#">Women</a>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
           </ul>
         </div>
@@ -88,7 +90,7 @@ const NavBar = () => {
             onClick={toggleCart}
           >
             {productCountity > 0 && cartItems.length != 0 ? (
-              <span className="cart-count flex justify-center items-center bg-orange-500 text-white">
+              <span className="cart-count flex justify-center items-center text-white">
                 {productCountity}
               </span>
             ) : (
@@ -109,7 +111,7 @@ const NavBar = () => {
             ) : (
               <div className="p-4">
                 {selectedProduct()}
-                <button className="bg-orange-500 w-full p-2 rounded font-bold tracking-wider my-2 cursor-pointer">
+                <button className="checkout-btn w-full p-2 rounded font-bold tracking-wider my-2 cursor-pointer">
                   Checkout
                 </button>
               </div>

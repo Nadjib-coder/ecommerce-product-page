@@ -1,5 +1,5 @@
 const Collections = () => {
-  return <h2>Collections Page</h2>;
+  return <h1>Collections Page</h1>;
 };
 
 export default Collections;

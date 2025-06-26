@@ -5,6 +5,7 @@ import App from './App.jsx';
 import Collections from './components/Collections/Collections';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import ProductPage from './components/ProductPage/ProductPage';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Collections /> },
       { path: '/collections/:ProductId', element: <Collections /> },
       { path: '/about', element: <About /> },
+      { path: '/productpage', element: <ProductPage /> },
       { path: '/contact', element: <Contact /> },
     ],
   },

@@ -1,10 +1,4 @@
 /* Styling for the navbar container */
-
-/* CSS Variable */
-:root {
-    --primary-color: hsl(26, 100%, 55%);
-}
-
 .nav-container hr {
     opacity: 0.1;
 }
@@ -88,6 +82,7 @@
 }
 
 .cart-count {
+    background-color: var(--primary-color);
     position: relative;
     top: 7px;
     right: -8px;
@@ -135,6 +130,10 @@
 .selected-product-item .product-image {
     width: 40px;
     height: 40px;
+}
+
+.checkout-btn {
+    background-color: var(--primary-color);
 }
 
 /* Tablet screen size designe */
